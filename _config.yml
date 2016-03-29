@@ -1,0 +1,35 @@
+# Welcome to Jekyll!
+
+# Site settings
+title: Ali Haddadkar | علی حدادکار
+email: ali.haddadkar@gmail.com
+description: "وبلاگ شخصی علی حدادکار"
+
+baseurl: ""
+url: "http://haddadkar.me"
+twitter_username: ali_haddadkar
+github_username:  alihaddadkar
+
+# Build settings
+markdown: kramdown
+
+include: ['_config.yml']
+
+# Outputting
+permalink: /blog/:title/
+
+paginate_path: /blog/page:num
+paginate: 5
+encoding: utf-8
+timezone: Asia/Tehran
+
+# safe: true
+
+sass:
+  style: :compressed
+
+# Plugins
+gems:
+   - jekyll-paginate
+   # - jekyll-sitemap
+   # - jalalidate
