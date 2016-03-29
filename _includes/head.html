@@ -1,0 +1,20 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% if page.title %}{{ page.title | escape }}{% endif %} - وبلاگ شخصی علی حدادکار</title>
+
+  {% include head/meta.html %}
+
+  <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="icon" href="{{ site.baseurl}}/favicon.ico?v=1" />
+
+
+  <script src="{{ site.baseurl }}/assets/libs/jquery/dist/jquery.min.js"></script>
+  <script src="{{ site.baseurl }}/assets/libs/material-design-lite/material.min.js"></script>
+
+</head>

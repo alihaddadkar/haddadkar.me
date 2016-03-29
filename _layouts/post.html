@@ -1,0 +1,25 @@
+---
+layout: blog
+---
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+   <article class="posts">
+
+      <aside class="post-list_row">
+
+         <div class="post-list_header" itemscope itemtype="http://schema.org/BlogPosting">
+            <h2><a itemprop="name headline" href="{{ post.url | prepend: site.baseurl }}"> {{ page.title }} </a></h2>
+             <p class="post-meta">
+                <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+         </div>
+
+         <div class="post-list_content" itemprop="articleBody">
+            {{ content }}
+         </div>
+         {% include comments.html %}
+
+      </aside>
+
+   </article>
+
+</article>

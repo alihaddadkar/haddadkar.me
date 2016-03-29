@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+{% include head.html %}
+
+<body>
+
+   <div class="mdl-layout">
+
+      {% include header.html %}
+
+      <main class="mdl-layout__content">
+
+         {% unless page.layout == 'post' %}
+         <header class="about  flex flex--vertical flex-center--v flex-center--h">
+               <div class="about__avatar">
+                  <img src="{{baseurl}}/assets/images/avatar.jpg" alt="Ali Haddadkar | علی حدادکار">
+               </div>
+               <div class="about__head">
+                  <h1>
+                     <span class="expertise">سلام، من </span>
+                     <span class="name"><a href="{{ site.baseurl }}/index.html">علی حدادکار</a></span>
+                     <span class="expertise">هستم،یه توسعه دهنده رابط کاربری (Front-end)</span>
+                  </h1>
+               </div>
+         </header>
+         {% endunless %}
+
+
+         <section class="mdl-grid flex-center--h">
+            <article class="content mdl-cell mdl--conatiner">
+               {{content}}
+            </article>
+         </section>
+      </main>
+
+      {% include footer.html %}
+
+   </div>
+
+</body>
+
+</html>

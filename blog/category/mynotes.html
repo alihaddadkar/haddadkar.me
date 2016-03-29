@@ -1,0 +1,42 @@
+---
+layout: blog
+---
+
+<article class="posts">
+
+   {% for mynotes in site.categories.mynotes %}
+   <aside class="post-list_row">
+
+      <div class="post-list_header" itemscope itemtype="http://schema.org/BlogPosting">
+         <h2><a href="{{ mynotes.url | prepend: site.baseurl }}"> {{ mynotes.title }} </a></h2>
+         <p class="post-meta">
+           <time>
+               {{ mynotes.date | date: "%b %-d, %Y" }}
+           </time>
+         </p>
+      </div>
+
+      <div class="post-list_content">
+         {{ mynotes.excerpt }}
+         <div class="more">
+            <a href=" {{ jekyll.url | prepend: site.baseurl }} " class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab"><i class="material-icons">more_horiz</i></a>
+         </div>
+      </div>
+
+   </aside>
+   {% endfor %}
+
+   <!-- Pagination links -->
+   <div class="pagination">
+
+      {% if paginator.next_page %}
+        <a class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" href="{{ paginator.next_page_path }}"><i class="material-icons">arrow_forward</i></a>
+      {% else %}{% endif %}
+
+     {% if paginator.previous_page %}
+       <a class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" href="{{ paginator.previous_page_path }}"><i class="material-icons">arrow_back</i></a>
+     {% else %}{% endif %}
+
+   </div>
+
+</article>
