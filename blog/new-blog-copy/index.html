@@ -14,13 +14,13 @@
    <meta name="keywords" content="" />
    <meta name="author" content="">
 
-   <link rel="canonical" href="http://haddadkar.me/blog/new-blog/">
+   <link rel="canonical" href="http://haddadkar.me/blog/new-blog-copy/">
    <!-- RSS -->
    <link rel="alternate" type="application/rss+xml" title="Ali Haddadkar | علی حدادکار | Feed" href="http://haddadkar.me /feed.xml " />
 
 
   <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="canonical" href="http://haddadkar.me/blog/new-blog/">
+  <link rel="canonical" href="http://haddadkar.me/blog/new-blog-copy/">
   <link rel="alternate" type="application/rss+xml" title="Ali Haddadkar | علی حدادکار" href="http://haddadkar.me/feed.xml">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="icon" href="/favicon.ico?v=1" />
@@ -49,7 +49,15 @@
             <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
                 for="blogCategory">
                 <li disabled class="mdl-menu__item">: موضوعات</li>
-               <li class="mdl-menu__item"><a href="/blog/category/mynotes">یادداشت های شخصی</a></li>
+                <!-- <li class="mdl-menu__item"><a href="/blog/category/mynotes">یادداشت های شخصی</a></li> -->
+                  
+                  
+                  
+                   
+                    <li class="mdl-menu__item">
+                       <a href="/blog/category/mynotes">یادداشت های شخصی</a></li>
+                    
+                  
             </ul>
 
             <a class="mdl-navigation__link" href="/index.html">صفحه نخست</a>
@@ -75,9 +83,21 @@
       <aside class="post-list_row">
 
          <div class="post-list_header" itemscope itemtype="http://schema.org/BlogPosting">
-            <h2><a itemprop="name headline" href=""> شروعی نو با jekyll </a></h2>
-             <p class="post-meta">
-                <time datetime="2016-03-20T15:40:42+03:30" itemprop="datePublished">Mar 20, 2016</time></p>
+            <h2><a itemprop="name headline" href="" title="شروعی نو با jekyll"> شروعی نو با jekyll </a></h2>
+            <p class="post-meta">
+               <span class="author">
+                  <a href="/about"><i class="material-icons">assignment_ind</i> علی حدادکار</a>
+               </span>
+               <span class="entry-categories">
+                  <a href="http://haddadkar.me/blog/category/mynotes/" rel="category">
+                      <i class="material-icons">assignment</i> یادداشت های شخصی
+                  </a>
+               </span>
+               <time datetime="2016-03-19T15:40:42+03:30" itemprop="datePublished">
+                  <i class="material-icons">date_range</i>  29 اسفند 1394
+               </time>
+
+            </p>
          </div>
 
          <div class="post-list_content" itemprop="articleBody">
@@ -87,7 +107,7 @@
 <p>همیشه دیده بودم کسانی که مطالب مختلف می نویسن خیلی بهتر اون رو درک میکنن ولی هیچ وقت خودم سمت نوشتن نرفته بودم که تجربش کنم. روزی که قرار شد سری <a href="http://themeyab.com/blog" title="آموزش کامل flexbox">آموزش Flexbox</a> رو برای وبلاگ <a href="http://themeyab.com" title="خرید قالب وردپرس">تم یاب</a> آماده کنم تازه تونستم این حسو تجربه کنم، از اون به بعد تصمیم گرفتم مطالب جدید و مشکلاتی که تو کار برام پیش میاد به همراه روش حل تو قالب یه پست بنویسم تا هم خودم بهتر درکش کنم و هم دیگر دوستان یه استفاده ای بکنن.</p>
 
 <p>من برای ساخت این وبلاگ از <a href="https://jekyllrb.com/" title="Transform your plain text into static websites and blogs.
-">jekyll</a>  استفاده کردم. دوسال پیش <a href="http://twitter.com/@amir_abbas">امیرعباس</a> مطلبی با عنوان <a href="http://front-end.ir/webdesign/why-i-have-chosen-jekyll/" title="چرا تصمیم گرفتم از Jekyll استفاده کنم">“چرا تصمیم گرفتم از Jekyll استفاده کنم“</a> رو تو وبلاگش منتشر کرد به نظرم جالب اومد و دوست داشتم باهاش کار کنم، برای همین تصمیم گرفتم برای راه اندازی این وبلاگ ازش استفاده کنم.</p>
+">jekyll</a>  استفاده کردم. دوسال پیش <a href="http://twitter.com/amir_abbas">امیرعباس</a> مطلبی با عنوان <a href="http://front-end.ir/webdesign/why-i-have-chosen-jekyll/" title="چرا تصمیم گرفتم از Jekyll استفاده کنم">“چرا تصمیم گرفتم از Jekyll استفاده کنم“</a> رو تو وبلاگش منتشر کرد به نظرم جالب اومد و دوست داشتم باهاش کار کنم، برای همین تصمیم گرفتم برای راه اندازی این وبلاگ ازش استفاده کنم.</p>
 
 <h3 id="jekyll-">jekyll چیست؟</h3>
 <p>Jekyll یک نرم افزار سایت ساز است که تمامی صفحات شما را به شکل استاتیک ایجاد می‌کند. ساختاری بسیار ساده دارد و شما برای نوشتن پست هیچ احتیاجی به ادیتور خاص و یا لاگین کردن در صفحه ای خاص ندارید. تنها کاری که باید انجام بدهید این است که متن خود را با فرمت markdown داخل یک فایل با پسوند md یا markdown ذخیره کنید و آن را در پوشه _post قرار دهید. Jekyll این پوشه را شناسایی کرده و محتوای داخل آن را می‌شناسد و پستی را برای شما با استفاده از همان فایل ایجاد می‌کند.</p>
@@ -99,7 +119,7 @@
 <script>
 
 var disqus_shortname = 'haddadkar';
-var disqus_identifier = "/blog/new-blog/";
+var disqus_identifier = "/blog/new-blog-copy/";
 
 
    (function() {
