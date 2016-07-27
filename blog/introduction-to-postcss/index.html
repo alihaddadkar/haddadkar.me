@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> آموزش PostCSS - معرفی و نصب</title>
+
+  <meta name="description" content="تقریبا تمام توسعه دهنده های فرانت اند که زمان زیادی رو صرف کار کردن با css می کنن یک سری از کمبود ها رو حس کردن که با اومدن Preprocessor تا حد قابل توجهی برط...">
+
+   <meta name="keywords" content="PostCSS,sass,less,stylus,Preprocessor,css,web-development,,Post,CSS,,پست,سی,اس,اس,,توسعه,وب,,پیش,پردازنده,های,سی,اس,اس" />
+
+   <meta name="author" content="علی حدادکار">
+
+   <link rel="canonical" href="http://haddadkar.me/blog/introduction-to-postcss/">
+   <!-- RSS -->
+   <link href="http://haddadkar.me /feed.xml " rel='alternate' type='application/atom+xml'>
+
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="canonical" href="http://haddadkar.me/blog/introduction-to-postcss/">
+  <link rel="alternate" type="application/rss+xml" title="Ali Haddadkar | علی حدادکار" href="http://haddadkar.me/feed.xml">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="icon" href="/favicon.ico?v=1" />
+
+
+  <script src="/assets/libs/jquery/dist/jquery.min.js"></script>
+  <script src="/assets/libs/material-design-lite/material.min.js"></script>
+
+</head>
+
+
+<body>
+
+   <div class="mdl-layout">
+
+      <header class="mdl-layout__header flex-center--v">
+   <div class="mdl--conatiner mdl--conatiner">
+
+   <nav class="mdl-layout__header-row flex-center--h">
+
+            <button id="blogCategory"
+                    class="mdl-button mdl-js-button mdl-button--icon">
+              <i class="material-icons">more_vert</i>
+            </button>
+
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                for="blogCategory">
+                <li disabled class="mdl-menu__item">: موضوعات</li>
+                <!-- <li class="mdl-menu__item"><a href="/blog/category/mynotes">یادداشت های شخصی</a></li> -->
+                  
+                  
+                  
+                   
+                    <li class="mdl-menu__item">
+                       <a href="/blog/category/mynotes">یادداشت های شخصی</a></li>
+                    
+                  
+                  
+                   
+                    <li class="mdl-menu__item">
+                       <a href="/blog/category/web-developing">توسعه وب</a></li>
+                    
+                  
+            </ul>
+
+            <a class="mdl-navigation__link" href="/index.html">صفحه نخست</a>
+            <a class="mdl-navigation__link" href="/blog">بلاگ</a>
+            <a class="mdl-navigation__link" href="/about">درباره من</a>
+
+      </nav>
+   </div>
+</header>
+
+
+      <main class="mdl-layout__content">
+
+         
+
+
+         <section class="mdl-grid flex-center--h">
+            <article class="content mdl-cell mdl--conatiner">
+               <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+   <article class="posts">
+
+      <aside class="post-list_row">
+
+         <div class="post-list_header" itemscope itemtype="http://schema.org/BlogPosting">
+            <h2><a itemprop="name headline" href="" title=" آموزش PostCSS - معرفی و نصب">  آموزش PostCSS - معرفی و نصب </a></h2>
+            <p class="post-meta">
+               <span class="author">
+                  <a href="/about"><i class="material-icons">assignment_ind</i> علی حدادکار</a>
+               </span>
+               <span class="entry-categories">
+                  <a href="http://haddadkar.me/blog/category/web-developing/" rel="category">
+                      <i class="material-icons">assignment</i> توسعه وب
+                  </a>
+               </span>
+               <time datetime="2016-07-15T00:00:42+04:30" itemprop="datePublished">
+                  <i class="material-icons">date_range</i>  25 تیر 1395
+               </time>
+
+            </p>
+         </div>
+
+         <div class="post-list_content" itemprop="articleBody">
+            <p><img src="/assets/images/posts/postcss.jpg" alt="شروع کار با جکیل!" />
+تقریبا تمام توسعه دهنده های فرانت اند که زمان زیادی رو صرف کار کردن با css می کنن یک سری از کمبود ها رو حس کردن که با اومدن Preprocessor تا حد قابل توجهی برطرف شدن. همه ما تقریبا با Preprocessor هایی مثل sass، less و stylus آشنایی داریم یا حداقل اسمشون به گوشمون خورده،
+این ابزار ها در طراحی و توسعه وب به یک بخش حیاتی تبدیل شده اند به حدی که استفاده نکردن از این ابزار ها یک اشتباه بزرگ محسوب میشه. خوشبختانه این ابزار ها روز به روز در حال افزایش هستند یکی از این ابزار های <a href="https://github.com/postcss/postcss" title="postcss در اصل تبدیل کننده دستور های css با استفاده از پلاگین های جاوا اسکریپته">PostCSS</a> هست که در ادامه معرفیش خواهم کرد.</p>
+
+<h3 id="postcss-">PostCSS چیست؟</h3>
+<p>اول از همه به این نکته توجه کنید که این ابزار یک Preprocessor نیست. <a href="https://github.com/postcss/postcss" title="postcss در اصل تبدیل کننده دستور های css با استفاده از پلاگین های جاوا اسکریپته">PostCSS</a> دستورات css را با استفاده از جاوا اسکریپت تبدیل می کنه.
+<a href="https://github.com/postcss/postcss" title="postcss در اصل تبدیل کننده دستور های css با استفاده از پلاگین های جاوا اسکریپته">PostCSS</a> کاملا وابسته به پلاگین هایی است که با جاوا اسکریپت براش نوشته شدن و به 
+تنهایی کاری انجام نمیده برای همین میشه گفت امکانات بیشتری نسبت به Preprocessor ها در اختیار ما میزاره البته این نکته هم فراموش نشه که شما می تونید <a href="https://github.com/postcss/postcss" title="postcss در اصل تبدیل کننده دستور های css با استفاده از پلاگین های جاوا اسکریپته">PostCSS</a> را به همراه Preprocessor ها استفاده کنید.<br />
+برای مثال در یک پروژه نیاز دارید توی css متغییر بنویسید ، برای این کار یک پلاگین به اسم postcss-simple-vars وجود داره که این امکان رو به css اضافه می کنه.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12</pre></td><td class="code"><pre><span class="nv">$dir</span><span class="p">:</span>    <span class="nb">top</span><span class="p">;</span>
+<span class="nv">$blue</span><span class="p">:</span>   <span class="mh">#056ef0</span><span class="p">;</span>
+<span class="nv">$column</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+
+<span class="nc">.menu_link</span> <span class="p">{</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="nv">$blue</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="nv">$column</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.menu</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="nf">calc</span><span class="p">(</span><span class="m">4</span> <span class="o">*</span> <span class="nv">$column</span><span class="p">);</span>
+    <span class="na">margin-</span><span class="err">$(</span><span class="na">dir</span><span class="err">)</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+<span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>خروجی کد بالا:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8</pre></td><td class="code"><pre><span class="nc">.menu_link</span> <span class="p">{</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="m">#056ef0</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.menu</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="n">calc</span><span class="p">(</span><span class="m">4</span> <span class="err">*</span> <span class="m">200px</span><span class="p">);</span>
+    <span class="nl">margin-top</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+<span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>در حال حاضر بیش از ۲۰۰ پلاگین برای PostCSS وجود داره که لیست اون هارو می تونید از صفحه <a href="https://github.com/postcss/postcss" title="پلاگین های PostCSS">Github</a> یا سایت <a href="http://postcss.parts/" title="پلاگین های PostCSS"> postcss.parts</a>  ببینید.</p>
+
+<h3 id="postcss--">چرا باید از PostCSS استفاده کنیم؟</h3>
+<p>شاید پیش خودتون بگید چه دلیلی داره که به جای Preprocessor ها از PostCSS استفاده کنیم. باید بگم که دلایل خوبی برای استفاده از این ابزار وجود داره که می تونید در زیر مشاهده کنید.</p>
+
+<ul>
+  <li><span class="list-label">۱ - سریع: </span> کامپایل سریعتر نسبت به Preprocessor ها.</li>
+  <li><span class="list-label">۲ - ماژولار: </span> شما بر اساس  بر اساس نیاز پروژه می تونید پلاگین های مختلفی اضافه کنید.</li>
+  <li><span class="list-label">۳ - قدرتمند: </span> وجود بیش از ۲۰۰ پلاگین که این ابزار رو قدرتمند و کاربردی تر می کنه.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">PostCSS 5.0.11: 40 ms
+PostCSS 5.0.10: 60ms    (1.5 times slower)
+Rework:         75 ms   (1.9 times slower)
+libsass:        76 ms   (1.9 times slower)
+Less:           147 ms  (3.7 times slower)
+Stylus:         166 ms  (4.1 times slower)
+Stylecow:       258 ms  (6.4 times slower)
+Ruby Sass:      1042 ms (26.0 times slower)</code></pre></figure>
+
+<p>در باکس بالا می تونید سرعت کامپایل ابزار های مختلف رو ببینید. یکی از مشکلاتی که با sass داشتم تاخیر در کامپایل فایل بود که با بزرگ شدن پروژه بوجود میومد. خوشبختانه <a href="https://github.com/postcss/postcss" title="postcss در اصل تبدیل کننده دستور های css با استفاده از پلاگین های جاوا اسکریپته">PostCSS</a> این مشکل رو حل کرده.</p>
+
+<h3 id="postcss">نصب و راه اندازی PostCSS</h3>
+<p>PostCSS را از طریق npm نصب می کنیم.</p>
+
+<figure class="highlight"><pre><code class="language-nginx" data-lang="nginx">  <span class="k">npm</span> <span class="s">install</span> <span class="s">-g</span> <span class="s">postcss-cli</span></code></pre></figure>
+
+<p>برای اطمینان از صحت نصب کد زیر را در ترمینال وارد کنید:</p>
+
+<figure class="highlight"><pre><code class="language-nginx" data-lang="nginx">  <span class="k">postcss</span> <span class="s">--help</span></code></pre></figure>
+
+<p>پس از اجرای کد بالا باید خروجی زیر رو ببینید:</p>
+
+<p><img src="/assets/images/posts/postcss1.jpg" alt="شروع کار با جکیل!" /></p>
+
+<p>خب تا اینجای کار <a href="https://github.com/postcss/postcss" title="postcss در اصل تبدیل کننده دستور های css با استفاده از پلاگین های جاوا اسکریپته">PostCSS</a> رو با موفقیت نصب کردیم. در پست بعدی به معرفی پلاگین های محبوب و کاربردی <a href="https://github.com/postcss/postcss" title="postcss در اصل تبدیل کننده دستور های css با استفاده از پلاگین های جاوا اسکریپته">PostCSS</a> و نحوه اجرای این ابزار توسط Task Runner های <a href="http://gulpjs.com/" title="Gulp ابزاری هست که کارها را می تواند به صورت خودکار انجام دهد.">Gulp</a> و <a href="http://gruntjs.com/" title="Grunt ابزاری هست که کارها را می تواند به صورت خودکار انجام دهد.">Grunt</a> می پردازم.</p>
+
+
+         </div>
+
+         <!-- <div class="PageNavigation">
+            
+           
+             <a class="prev" href="/blog/new-blog-with-jekyll/">&laquo; شروعی نو با jekyll</a>
+           
+
+         </div> -->
+
+         <div id="disqus_thread"></div>
+<script>
+
+var disqus_shortname = 'haddadkar';
+var disqus_identifier = "/blog/introduction-to-postcss/";
+
+
+   (function() {
+      var d = document,
+         s = d.createElement('script');
+
+      s.src = '//haddadkar.disqus.com/embed.js';
+
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+   })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+<script id="dsq-count-scr" src="//haddadkar.disqus.com/count.js" async></script>
+
+
+      </aside>
+
+   </article>
+
+</article>
+
+            </article>
+         </section>
+      </main>
+
+      <footer class="mdl-mini-footer">
+  <div class="mdl-mini-footer__left-section mdl--conatiner">
+    <ul class="mdl-mini-footer__link-list">
+      <li><a target="_blank" href="http://facebook.com/ali.haddadkar">Facebook</a></li>
+      <li><a target="_blank" href="http://twitter.com/ali_haddadkar">Twitter</i></a></li>
+      <li><a target="_blank" href="http://ir.linkedin.com/in/ali-haddadkar-6991a568">Linkedin</i></a></li>
+      <li><a target="_blank" href="http://github.com/alihaddadkar">Github</a></li>
+      <li><a target="_blank" href="/feed.xml">Rss</a></li>
+    </ul>
+    <p class="copyright">© 2016 Ali Haddadkar.</p>
+  </div>
+</footer>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75043842-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+   </div>
+
+</body>
+
+</html>
