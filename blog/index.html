@@ -24,84 +24,81 @@
   <link rel="alternate" type="application/rss+xml" title="Ali Haddadkar | علی حدادکار" href="http://haddadkar.me/feed.xml">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="icon" href="/favicon.ico?v=1" />
-
-
-  <script src="/assets/libs/jquery/dist/jquery.min.js"></script>
-  <script src="/assets/libs/material-design-lite/material.min.js"></script>
-
 </head>
 
 
 <body>
 
-   <div class="mdl-layout">
+      <header class="header">
+    <nav class="navigation">
+        <div class="container">
 
-      <header class="mdl-layout__header flex-center--v">
-   <div class="mdl--conatiner mdl--conatiner">
+            <div class="menu">
+                <button id="mdl-menu--bottom-right" class="mdl-button mdl-js-button mdl-button--icon">
+                    <i class="material-icons">more_vert</i>
+                </button>
 
-   <nav class="mdl-layout__header-row flex-center--h">
-
-            <button id="blogCategory"
-                    class="mdl-button mdl-js-button mdl-button--icon">
-              <i class="material-icons">more_vert</i>
-            </button>
-
-            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
-                for="blogCategory">
-                <li disabled class="mdl-menu__item">: موضوعات</li>
-                <!-- <li class="mdl-menu__item"><a href="/blog/category/mynotes">یادداشت های شخصی</a></li> -->
-                  
-                  
-                  
-                   
-                    <li class="mdl-menu__item">
-                       <a href="/blog/category/mynotes">یادداشت های شخصی</a></li>
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="mdl-menu--bottom-right">
+                    <li disabled class="mdl-menu__item">: موضوعات</li>
                     
-                  
-                  
-                   
-                    <li class="mdl-menu__item">
-                       <a href="/blog/category/web-developing">توسعه وب</a></li>
                     
-                  
-            </ul>
+                        
+                        
+                            <li class="mdl-menu__item">
+                                <a href="/blog/category/mynotes">یادداشت های شخصی</a>
+                            </li>
+                        
+                    
+                        
+                        
+                            <li class="mdl-menu__item">
+                                <a href="/blog/category/web-developing">توسعه وب</a>
+                            </li>
+                        
+                    
+                </ul>
+            </div>
+            <a href="/index.html">صفحه نخست</a>
+            <a href="/blog">بلاگ</a>
+            <a href="/about">درباره من</a>
 
-            <a class="mdl-navigation__link" href="/index.html">صفحه نخست</a>
-            <a class="mdl-navigation__link" href="/blog">بلاگ</a>
-            <a class="mdl-navigation__link" href="/about">درباره من</a>
+        </div>
+    </nav>
 
-      </nav>
-   </div>
+    
+        <section class="box-about">
+            <div class="container">
+                <div class="about--avatar">
+                    <img src="https://s.gravatar.com/avatar/75bd8ab60b3af20854f529fe58715b9c?s=200" alt="Ali Haddadkar | علی حدادکار">
+                </div>
+                <div class="about--head">
+                    <h1>
+                        <span class="expertise">سلام، من
+                        </span>
+                        <span class="name">
+                            <a title="وبسایت شخصی علی حدادکار | Ali Haddadkar Personal Blog" href="/index.html">علی حدادکار</a>
+                        </span>
+                        <span class="expertise">هستم،یه توسعه دهنده رابط کاربری (Front-end)</span>
+                    </h1>
+                </div>
+            </div>
+
+        </section>
+    
 </header>
 
 
-      <main class="mdl-layout__content">
+      <main class="page">
 
-         
-         <header class="about  flex flex--vertical flex-center--v flex-center--h">
-               <div class="about__avatar">
-                  <img src="https://s.gravatar.com/avatar/75bd8ab60b3af20854f529fe58715b9c?s=200" alt="Ali Haddadkar | علی حدادکار">
-               </div>
-               <div class="about__head">
-                  <h1>
-                     <span class="expertise">سلام، من </span>
-                     <span class="name"><a title="وبسایت شخصی علی حدادکار | Ali Haddadkar Personal Blog" href="/index.html">علی حدادکار</a></span>
-                     <span class="expertise">هستم،یه توسعه دهنده رابط کاربری (Front-end)</span>
-                  </h1>
-               </div>
-         </header>
-         
-
-
-         <section class="mdl-grid flex-center--h">
-            <article class="content mdl-cell mdl--conatiner">
+         <section class="page-content container">
+            <article class="">
                <article class="posts">
 
    
-   <aside class="post-list_row pad">
+   <aside class="post-list pad">
 
-      <div class="post-list_header" itemscope itemtype="http://schema.org/BlogPosting">
-         <h2><a title=" آموزش PostCSS - معرفی و نصب" href="/blog/getting-started-with-postcss/">  آموزش PostCSS - معرفی و نصب </a></h2>
+      <div class="post-header" itemscope itemtype="http://schema.org/BlogPosting">
+         <h2 class="post-header--title"><a title=" آموزش PostCSS - معرفی و نصب" href="/blog/getting-started-with-postcss/">  آموزش PostCSS - معرفی و نصب </a></h2>
          <p class="post-meta">
             <time>
                 25 تیر 1395
@@ -109,8 +106,8 @@
          </p>
       </div>
 
-      <div class="post-list_content">
-         <p><img src="/assets/images/posts/postcss.jpg" alt="شروع کار با جکیل!" />
+      <div class="post-content">
+         <p><img src="/assets/images/posts/2016-07-14-getting-started-with-postcss/postcss.jpg" alt="شروع کار با جکیل!" />
 تقریبا تمام توسعه دهنده های فرانت اند که زمان زیادی رو صرف کار کردن با css می کنن یک سری از کمبود ها رو حس کردن که با اومدن Preprocessor تا حد قابل توجهی برطرف شدن. همه ما تقریبا با Preprocessor هایی مثل sass، less و stylus آشنایی داریم یا حداقل اسمشون به گوشمون خورده،
 این ابزار ها در طراحی و توسعه وب به یک بخش حیاتی تبدیل شده اند به حدی که استفاده نکردن از این ابزار ها یک اشتباه بزرگ محسوب میشه. خوشبختانه این ابزار ها روز به روز در حال افزایش هستند یکی از این ابزار های <a href="https://github.com/postcss/postcss" title="postcss در اصل تبدیل کننده دستور های css با استفاده از پلاگین های جاوا اسکریپته">PostCSS</a> هست که در ادامه معرفیش خواهم کرد.</p>
 
@@ -122,10 +119,10 @@
 
    </aside>
    
-   <aside class="post-list_row pad">
+   <aside class="post-list pad">
 
-      <div class="post-list_header" itemscope itemtype="http://schema.org/BlogPosting">
-         <h2><a title="شروعی نو با jekyll" href="/blog/new-blog-with-jekyll/"> شروعی نو با jekyll </a></h2>
+      <div class="post-header" itemscope itemtype="http://schema.org/BlogPosting">
+         <h2 class="post-header--title"><a title="شروعی نو با jekyll" href="/blog/new-blog-with-jekyll/"> شروعی نو با jekyll </a></h2>
          <p class="post-meta">
             <time>
                 29 اسفند 1394
@@ -133,8 +130,8 @@
          </p>
       </div>
 
-      <div class="post-list_content">
-         <p><img src="/assets/images/posts/jekyll.jpg" alt="شروع کار با جکیل!" />
+      <div class="post-content">
+         <p><img src="/assets/images/posts/2016-03-19-new-blog-with-jekyll/jekyll.jpg" alt="شروع کار با جکیل!" />
 یکی دو سالی میشه که قصد دارم یه وبلاگ راه بندازم اما به دلیل کمبود وقت و مهم تر از اون ترس از نوشتن بیخیال این موضوع می شدم. از بچگی نوشتن برای من کار سختی بوده اما بالاخره این ترس رو کنار گذاشتم و اینجارو راه انداختم. امیدوارم این وبلاگ کمک کنه تا این مهارت رو تقویت کنم.</p>
 
 
@@ -161,16 +158,18 @@
          </section>
       </main>
 
-      <footer class="mdl-mini-footer">
-  <div class="mdl-mini-footer__left-section mdl--conatiner">
-    <ul class="mdl-mini-footer__link-list">
-      <li><a target="_blank" href="http://facebook.com/ali.haddadkar">Facebook</a></li>
-      <li><a target="_blank" href="http://twitter.com/ali_haddadkar">Twitter</i></a></li>
-      <li><a target="_blank" href="http://ir.linkedin.com/in/ali-haddadkar-6991a568">Linkedin</i></a></li>
-      <li><a target="_blank" href="http://github.com/alihaddadkar">Github</a></li>
-      <li><a target="_blank" href="/feed.xml">Rss</a></li>
-    </ul>
-    <p class="copyright">© 2016 Ali Haddadkar.</p>
+      <footer class="footer">
+  <div class="container">
+      <div class="footer-flex">
+        <ul class="footer-social-links">
+          <li><a target="_blank" href="http://facebook.com/ali.haddadkar">Facebook</a></li>
+          <li><a target="_blank" href="http://twitter.com/ali_haddadkar">Twitter</i></a></li>
+          <li><a target="_blank" href="http://ir.linkedin.com/in/ali-haddadkar-6991a568">Linkedin</i></a></li>
+          <li><a target="_blank" href="http://github.com/alihaddadkar">Github</a></li>
+          <li><a target="_blank" href="/feed.xml">Rss</a></li>
+        </ul>
+        <p class="copyright">© 2016 Ali Haddadkar.</p>
+      </div>
   </div>
 </footer>
 
@@ -186,8 +185,9 @@
 </script>
 
 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.2.1/material.min.js"></script>
 
-   </div>
 
 </body>
 
