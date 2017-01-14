@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title></title>
+    <description>این وبلاگ شخصی من (علی حدادکار) و بیشتر از یادداشت های شخصی وتجربه های کاری خودم می نویسم</description>
+    <link>http://haddadkar.me</link>
+    <atom:link href="http://haddadkar.me/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title> آموزش PostCSS - معرفی و نصب</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/images/posts/2016-07-14-getting-started-with-postcss/postcss.jpg&quot; alt=&quot;شروع کار با جکیل!&quot; /&gt;
+تقریبا تمام توسعه دهنده های فرانت اند که زمان زیادی رو صرف کار کردن با css می کنن یک سری از کمبود ها رو حس کردن که با اومدن Preprocessor تا حد قابل توجهی برطرف شدن. همه ما تقریبا با Preprocessor هایی مثل sass، less و stylus آشنایی داریم یا حداقل اسمشون به گوشمون خورده،
+این ابزار ها در طراحی و توسعه وب به یک بخش حیاتی تبدیل شده اند به حدی که استفاده نکردن از این ابزار ها یک اشتباه بزرگ محسوب میشه. خوشبختانه این ابزار ها روز به روز در حال افزایش هستند یکی از این ابزار های &lt;a href=&quot;https://github.com/postcss/postcss&quot; title=&quot;postcss در اصل تبدیل کننده دستور های css با استفاده از پلاگین های جاوا اسکریپته&quot;&gt;PostCSS&lt;/a&gt; هست که در ادامه معرفیش خواهم کرد.&lt;/p&gt;
+
+&lt;h3 id=&quot;postcss-&quot;&gt;PostCSS چیست؟&lt;/h3&gt;
+&lt;p&gt;اول از همه به این نکته توجه کنید که این ابزار یک Preprocessor نیست. &lt;a href=&quot;https://github.com/postcss/postcss&quot; title=&quot;postcss در اصل تبدیل کننده دستور های css با استفاده از پلاگین های جاوا اسکریپته&quot;&gt;PostCSS&lt;/a&gt; دستورات css را با استفاده از جاوا اسکریپت تبدیل می کنه.
+&lt;a href=&quot;https://github.com/postcss/postcss&quot; title=&quot;postcss در اصل تبدیل کننده دستور های css با استفاده از پلاگین های جاوا اسکریپته&quot;&gt;PostCSS&lt;/a&gt; کاملا وابسته به پلاگین هایی است که با جاوا اسکریپت براش نوشته شدن و به
+تنهایی کاری انجام نمیده برای همین میشه گفت امکانات بیشتری نسبت به Preprocessor ها در اختیار ما میزاره البته این نکته هم فراموش نشه که شما می تونید &lt;a href=&quot;https://github.com/postcss/postcss&quot; title=&quot;postcss در اصل تبدیل کننده دستور های css با استفاده از پلاگین های جاوا اسکریپته&quot;&gt;PostCSS&lt;/a&gt; را به همراه Preprocessor ها استفاده کنید.&lt;br /&gt;
+برای مثال در یک پروژه نیاز دارید توی css متغییر بنویسید ، برای این کار یک پلاگین به اسم postcss-simple-vars وجود داره که این امکان رو به css اضافه می کنه.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nv&quot;&gt;$dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;    &lt;span class=&quot;nb&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$blue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;   &lt;span class=&quot;mh&quot;&gt;#056ef0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$column&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;200px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.menu_link&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$blue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$column&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.menu&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;calc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$column&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;margin-&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;dir&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;خروجی کد بالا:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nc&quot;&gt;.menu_link&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#056ef0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;200px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.menu&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;calc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;200px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;margin-top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;در حال حاضر بیش از ۲۰۰ پلاگین برای PostCSS وجود داره که لیست اون هارو می تونید از صفحه &lt;a href=&quot;https://github.com/postcss/postcss&quot; title=&quot;پلاگین های PostCSS&quot;&gt;Github&lt;/a&gt; یا سایت &lt;a href=&quot;http://postcss.parts/&quot; title=&quot;پلاگین های PostCSS&quot;&gt; postcss.parts&lt;/a&gt;  ببینید.&lt;/p&gt;
+
+&lt;h3 id=&quot;postcss--&quot;&gt;چرا باید از PostCSS استفاده کنیم؟&lt;/h3&gt;
+&lt;p&gt;شاید پیش خودتون بگید چه دلیلی داره که به جای Preprocessor ها از PostCSS استفاده کنیم. باید بگم که دلایل خوبی برای استفاده از این ابزار وجود داره که می تونید در زیر مشاهده کنید.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;span class=&quot;list-label&quot;&gt;۱ - سریع: &lt;/span&gt; کامپایل سریعتر نسبت به Preprocessor ها.&lt;/li&gt;
+  &lt;li&gt;&lt;span class=&quot;list-label&quot;&gt;۲ - ماژولار: &lt;/span&gt; شما  بر اساس نیاز پروژه می تونید پلاگین های مختلفی اضافه کنید.&lt;/li&gt;
+  &lt;li&gt;&lt;span class=&quot;list-label&quot;&gt;۳ - قدرتمند: &lt;/span&gt; وجود بیش از ۲۰۰ پلاگین که این ابزار رو قدرتمند و کاربردی تر می کنه.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-plaintext&quot; data-lang=&quot;plaintext&quot;&gt;PostCSS 5.0.11: 40 ms
+PostCSS 5.0.10: 60ms    (1.5 times slower)
+Rework:         75 ms   (1.9 times slower)
+libsass:        76 ms   (1.9 times slower)
+Less:           147 ms  (3.7 times slower)
+Stylus:         166 ms  (4.1 times slower)
+Stylecow:       258 ms  (6.4 times slower)
+Ruby Sass:      1042 ms (26.0 times slower)&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;در باکس بالا می تونید سرعت کامپایل ابزار های مختلف رو ببینید. یکی از مشکلاتی که با sass داشتم تاخیر در کامپایل فایل بود که با بزرگ شدن پروژه بوجود میومد. خوشبختانه &lt;a href=&quot;https://github.com/postcss/postcss&quot; title=&quot;postcss در اصل تبدیل کننده دستور های css با استفاده از پلاگین های جاوا اسکریپته&quot;&gt;PostCSS&lt;/a&gt; این مشکل رو حل کرده.&lt;/p&gt;
+
+&lt;h3 id=&quot;postcss&quot;&gt;نصب و راه اندازی PostCSS&lt;/h3&gt;
+&lt;p&gt;PostCSS را از طریق npm نصب می کنیم.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-nginx&quot; data-lang=&quot;nginx&quot;&gt;  &lt;span class=&quot;k&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;-g&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;postcss-cli&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;برای اطمینان از صحت نصب کد زیر را در ترمینال وارد کنید:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-nginx&quot; data-lang=&quot;nginx&quot;&gt;  &lt;span class=&quot;k&quot;&gt;postcss&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;--help&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;پس از اجرای کد بالا باید خروجی زیر رو ببینید:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/2016-07-14-getting-started-with-postcss/postcss1.jpg&quot; alt=&quot;شروع کار با جکیل!&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;خب تا اینجای کار &lt;a href=&quot;https://github.com/postcss/postcss&quot; title=&quot;postcss در اصل تبدیل کننده دستور های css با استفاده از پلاگین های جاوا اسکریپته&quot;&gt;PostCSS&lt;/a&gt; رو با موفقیت نصب کردیم. در پست بعدی به معرفی پلاگین های محبوب و کاربردی &lt;a href=&quot;https://github.com/postcss/postcss&quot; title=&quot;postcss در اصل تبدیل کننده دستور های css با استفاده از پلاگین های جاوا اسکریپته&quot;&gt;PostCSS&lt;/a&gt; و نحوه اجرای این ابزار توسط Task Runner های &lt;a href=&quot;http://gulpjs.com/&quot; title=&quot;Gulp ابزاری هست که کارها را می تواند به صورت خودکار انجام دهد.&quot;&gt;Gulp&lt;/a&gt; و &lt;a href=&quot;http://gruntjs.com/&quot; title=&quot;Grunt ابزاری هست که کارها را می تواند به صورت خودکار انجام دهد.&quot;&gt;Grunt&lt;/a&gt; می پردازم.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 15 Jul 2016 00:00:42 +0430</pubDate>
+        <link>http://haddadkar.me//blog/getting-started-with-postcss/</link>
+        <guid isPermaLink="true">http://haddadkar.me//blog/getting-started-with-postcss/</guid>
+      </item>
+    
+      <item>
+        <title>شروعی نو با jekyll</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/images/posts/2016-03-19-new-blog-with-jekyll/jekyll.jpg&quot; alt=&quot;شروع کار با جکیل!&quot; /&gt;
+یکی دو سالی میشه که قصد دارم یه وبلاگ راه بندازم اما به دلیل کمبود وقت و مهم تر از اون ترس از نوشتن بیخیال این موضوع می شدم. از بچگی نوشتن برای من کار سختی بوده اما بالاخره این ترس رو کنار گذاشتم و اینجارو راه انداختم. امیدوارم این وبلاگ کمک کنه تا این مهارت رو تقویت کنم.&lt;/p&gt;
+
+&lt;p&gt;همیشه دیده بودم کسانی که مطالب مختلف می نویسن خیلی بهتر اون رو درک میکنن ولی هیچ وقت خودم سمت نوشتن نرفته بودم که تجربش کنم. روزی که قرار شد سری &lt;a href=&quot;http://themeyab.com/blog&quot; title=&quot;آموزش کامل flexbox&quot;&gt;آموزش Flexbox&lt;/a&gt; رو برای وبلاگ &lt;a href=&quot;http://themeyab.com&quot; title=&quot;خرید قالب وردپرس&quot;&gt;تم یاب&lt;/a&gt; آماده کنم تازه تونستم این حسو تجربه کنم، از اون به بعد تصمیم گرفتم مطالب جدید و مشکلاتی که تو کار برام پیش میاد به همراه روش حل تو قالب یه پست بنویسم تا هم خودم بهتر درکش کنم و هم دیگر دوستان یه استفاده ای بکنن.&lt;/p&gt;
+
+&lt;p&gt;من برای ساخت این وبلاگ از &lt;a href=&quot;https://jekyllrb.com/&quot; title=&quot;) یک سیستم سایت‌ساز و بلاگینگِ استتیک، بسیار سریع و ساده می‌باشد که با استفاده از زبان
+&quot;&gt;jekyll&lt;/a&gt;  استفاده کردم. دوسال پیش &lt;a href=&quot;http://twitter.com/amir_abbas&quot;&gt;امیرعباس&lt;/a&gt; مطلبی با عنوان &lt;a href=&quot;http://front-end.ir/webdesign/why-i-have-chosen-jekyll/&quot; title=&quot;چرا تصمیم گرفتم از Jekyll استفاده کنم&quot;&gt;“چرا تصمیم گرفتم از Jekyll استفاده کنم“&lt;/a&gt; رو تو وبلاگش منتشر کرد به نظرم جالب اومد و دوست داشتم باهاش کار کنم، برای همین تصمیم گرفتم برای راه اندازی این وبلاگ ازش استفاده کنم.&lt;/p&gt;
+
+&lt;h3 id=&quot;jekyll-&quot;&gt;jekyll چیست؟&lt;/h3&gt;
+&lt;p&gt;جکیل (&lt;a href=&quot;https://jekyllrb.com/&quot; title=&quot;) یک سیستم سایت‌ساز و بلاگینگِ استتیک، بسیار سریع و ساده می‌باشد که با استفاده از زبان &quot;&gt;Jekyll&lt;/a&gt;) یک نرم افزار سایت ساز است که تمامی صفحات شما را به شکل استاتیک ایجاد می‌کند. ساختاری بسیار ساده دارد و شما برای نوشتن پست هیچ احتیاجی به ادیتور خاص و یا لاگین کردن در صفحه ای خاص ندارید. تنها کاری که باید انجام بدهید این است که متن خود را با فرمت &lt;a href=&quot;https://daringfireball.net/projects/markdown/&quot; title=&quot;markdown&quot;&gt;markdown&lt;/a&gt; داخل یک فایل با پسوند &lt;a href=&quot;https://daringfireball.net/projects/markdown/&quot; title=&quot;markdown&quot;&gt;md&lt;/a&gt; یا &lt;a href=&quot;https://daringfireball.net/projects/markdown/&quot; title=&quot;markdown&quot;&gt;markdown&lt;/a&gt; ذخیره کنید و آن را در پوشه _post قرار دهید. Jekyll این پوشه را شناسایی کرده و محتوای داخل آن را می‌شناسد و پستی را برای شما با استفاده از همان فایل ایجاد می‌کند.&lt;/p&gt;
+
+&lt;p&gt;اکر علاقه مند هستید بیشتر درباره &lt;a href=&quot;https://jekyllrb.com/&quot; title=&quot;) یک سیستم سایت‌ساز و بلاگینگِ استتیک، بسیار سریع و ساده می‌باشد که با استفاده از زبان
+&quot;&gt;jekyll&lt;/a&gt;  بدونید و با مزایا و معایب  اون آشنا بشید پیشنهاد می کنم مطلب امیرعباس رو بخونید.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 19 Mar 2016 15:40:42 +0330</pubDate>
+        <link>http://haddadkar.me//blog/new-blog-with-jekyll/</link>
+        <guid isPermaLink="true">http://haddadkar.me//blog/new-blog-with-jekyll/</guid>
+      </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,104 @@
+/**
+ * Links
+ */
+a {
+    color: $color-brand;
+    text-decoration: none;
+
+    &:visited {
+        color: darken($color-brand, 15%);
+    }
+
+    &:hover {
+        color: $color-text;
+        text-decoration: underline;
+    }
+}
+
+ul, li{
+   margin-bottom: 1rem;
+}
+
+.list-label{
+   font-weight: 900;
+   color: $color-brand;
+}
+
+
+@mixin mq($point) {
+
+    @if $point == tablet {
+         @media (min-width: 50em){
+            @content;
+        }
+    }
+    @else if $point == mobileonly {
+         @media (max-width: 37.5em){
+            @content;
+        }
+    }
+}
+
+@mixin links($color , $color-hover , $pad, $effect: false){
+
+   @if $effect == false {
+      a{
+         outline: 0;
+         color: $color;
+         &:link
+         &:focus,
+         &:visited{
+            color: $color;
+         }
+         &:hover{
+            color: $color-hover;
+            text-decoration: none;
+            outline: 0;
+         }
+      }
+   } @elseif $effect == true {
+
+      a{
+         display: inline-block;
+         position: relative;
+         padding-bottom: $pad+rem;
+         transition: color .3s ease-in-out;
+         color: $color;
+         &:before {
+             content: '';
+             display: block;
+             position: absolute;
+             left: 0;
+             bottom: 0;
+             height: 1px;
+             width: 0;
+             transition: width 0s ease, background .3s ease;
+         }
+         &:after {
+             content: '';
+             display: block;
+             position: absolute;
+             right: 0;
+             bottom: 0;
+             height: 1px;
+             width: 0;
+             background: $color;
+             transition: width .3s ease;
+         }
+         &:hover{
+            color: $color-hover;
+            &:before {
+                width: 100%;
+                background: $color-hover;
+                transition: width .3s ease;
+            }
+            &:after {
+                width: 100%;
+                background: transparent;
+                transition: all 0s ease;
+            }
+         }
+      }
+   }
+
+}

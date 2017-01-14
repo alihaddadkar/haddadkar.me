@@ -1,0 +1,45 @@
+# Welcome to Jekyll!
+
+# Site settings
+title: Ali Haddadkar | علی حدادکار
+email: ali.haddadkar@gmail.com
+description: "این وبلاگ شخصی من (علی حدادکار) و بیشتر از یادداشت های شخصی وتجربه های کاری خودم می نویسم"
+keywords:  "علی حدادکار،بلاگ،وبلاگ,ali haddadkar,blog, توسعه دهنده وب, web developer, طراح وب, frontend developer"
+
+authors:
+   name-fa: علی حدادکار
+   name-en : Ali Haddadkar
+   gravatar: https://s.gravatar.com/avatar/75bd8ab60b3af20854f529fe58715b9c?s=200
+   email: ali.haddadkar@gmail.com
+   facebook: http://facebook.com/ali.haddadkar
+   twitter: http://twitter.com/ali_haddadkar
+   instagram: http://instagram.com/ali_haddadkar
+   linkedin: http://ir.linkedin.com/in/ali-haddadkar-6991a568
+   github: http://github.com/alihaddadkar
+
+baseurl: ""
+url: "http://haddadkar.me"
+
+# Build settings
+markdown: kramdown
+
+include: ['_config.yml']
+
+# Outputting
+permalink: /blog/:title/
+
+paginate_path: /blog/page:num
+paginate: 5
+encoding: utf-8
+timezone: Asia/Tehran
+
+# safe: true
+
+sass:
+  style: :compressed
+
+# Plugins
+gems:
+   - jekyll-paginate
+   - jalalidate
+   - jekyll-sitemap

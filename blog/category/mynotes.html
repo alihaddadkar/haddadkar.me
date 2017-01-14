@@ -1,26 +1,25 @@
 ---
 layout: blog
-title: وبلاگ شخصی علی حدادکار
 ---
 
 <article class="posts">
 
-   {% for post in paginator.posts %}
-   <aside class="post-list pad">
+   {% for mynotes in site.categories.mynotes %}
+   <aside class="post-list">
 
       <div class="post-header" itemscope itemtype="http://schema.org/BlogPosting">
-         <h2 class="post-header--title"><a title="{{ post.title }}" href="{{ post.url | prepend: site.baseurl }}"> {{ post.title }} </a></h2>
+         <h2 class="post-header--title"><a href="{{ mynotes.url | prepend: site.baseurl }}"> {{ mynotes.title }} </a></h2>
          <p class="post-meta">
-            <time>
-               {{ post.date | jdate: " %d %b %Y" }}
-            </time>
+           <time>
+               {{ mynotes.date | jdate: " %d %b %Y" }}
+           </time>
          </p>
       </div>
 
       <div class="post-content">
-         {{ post.excerpt }}
+         {{ mynotes.excerpt }}
          <div class="more">
-            <a href=" {{ post.url | prepend: site.baseurl }} " class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab"><i class="material-icons">more_horiz</i></a>
+            <a href=" {{ jekyll.url | prepend: site.baseurl }} " class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab"><i class="material-icons">more_horiz</i></a>
          </div>
       </div>
 

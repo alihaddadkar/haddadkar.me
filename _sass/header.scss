@@ -1,0 +1,83 @@
+.header {
+    background-color: $background-color;
+    border-bottom   : 0.1rem darken($background-color, 3%) solid;
+    color           : $color-text;
+    box-shadow      : 0 0 0;
+
+    .mdl-menu {
+        a {
+            display: block;
+        }
+        @include links($color-text, $color-text , 0, false);
+
+        .mdl-menu__item {
+            text-align: right;
+        }
+    }
+}
+// header
+
+
+.navigation{
+   text-align: center;
+   .menu{
+      display: inline;
+      position: relative;
+      direction: ltr;
+   }
+   & > .container > a{
+      color: $color-text;
+      padding: 0 1rem;
+      line-height: 64px;
+   }
+}
+// navigation
+
+
+.box-about {
+    padding         : 4rem 0;
+    background-color: darken($background-color, .9%);
+    border-bottom   : 0.2rem darken($background-color, 5%) solid;
+
+    .about--avatar {
+        width        : 150px;
+        height       : 150px;
+        border-radius: 50%;
+        overflow     : hidden;
+        margin       : 0 auto 1rem;
+
+        img {
+            width : 100%;
+            height: 100%;
+        }
+    }
+
+    .about--head {
+        margin: 1rem 0;
+
+        h1 {
+            margin    : 0;
+            text-align: center;
+
+            span {
+                display      : block;
+                margin-bottom: 1rem;
+
+                &.name {
+                    font: $base-font-size + 0.7 $base-font-family;
+                    @include links($color-brand, $color-brand , .5, true);
+
+                    a {
+                        color: $color-brand;
+                        font-weight: 900;
+                    }
+                }
+
+                &.expertise {
+                    font: $base-font-size + 0.4 $base-font-family;
+                }
+            }
+        }
+    }
+}
+// box-about

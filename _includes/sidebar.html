@@ -1,0 +1,54 @@
+<nav class="sidebar mdl-cell mdl-cell--4-col">
+
+   <nav class="sidebar_header">
+
+      <ul class="sidebar--rowlist">
+         <li><a href="{{ site.baseurl }}/index.html">صفحه اصلی</a></li>
+         <li><a href="{{ site.baseurl }}/blog">بلاگ</a></li>
+         <li><a href="about.html">درباره من</a></li>
+
+         <button id="blogCategory"
+                 class="mdl-button mdl-js-button mdl-button--icon">
+           <i class="material-icons">more_vert</i>
+         </button>
+
+         <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="blogCategory">
+           <li disabled class="mdl-menu__item">: موضوعات</li>
+           <li class="mdl-menu__item mdl-menu__item--full-bleed-divider"> یادداشت های شخصی</li>
+           <li class="mdl-menu__item">توسعه وب</li>
+           <li class="mdl-menu__item">وردپرس</li>
+         </ul>
+
+      </ul>
+   </nav>
+
+   <div class="sidebar_content">
+
+      <div class="sidebar__avatar">
+         <img src="{{baseurl}}/assets/images/avatar.jpg" alt="Ali Haddadkar | علی حدادکار">
+      </div>
+      <div class="sidebar__head">
+         <h1>
+            <span class="name">علی حدادکار</span>
+            <span class="expertise">توسعه دهنده رابط کاربری</span>
+         </h1>
+      </div>
+   </div>
+
+   <div class="sidebar_footer">
+      <nav class="sidebar_footer__social-links">
+         <ul>
+            <li><a target="_blank" href="http://facebook.com/ali.haddadkar"><i class="fa fa-facebook-square"></i></a></li>
+            <li><a target="_blank" href="http://twitter.com/ali_haddadkar"><i class="fa fa-twitter-square"></i></a></li>
+            <li><a target="_blank" href="http://instagram.com/ali_haddadkar"><i class="fa fa-instagram"></i></a></li>
+            <li><a target="_blank" href="http://ir.linkedin.com/in/ali-haddadkar-6991a568"><i class="fa fa-linkedin-square"></i></a></li>
+            <li><a target="_blank" href="#"><i class="fa fa-github-square"></i></a></li>
+            <li><a target="_blank" href="#"><i class="fa fa-rss-square"></i></a></li>
+         </ul>
+      </nav>
+      <p class="sidebar_footer__copyright">
+         © 2016 Ali Haddadkar.
+      </p>
+   </div>
+
+</nav>

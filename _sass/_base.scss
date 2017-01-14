@@ -1,0 +1,135 @@
+html {
+    font-size: 100%;
+}
+
+body {
+    font                         : $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+    color                        : $color-text;
+    background-color             : $background-color;
+    -webkit-text-size-adjust     : 100%;
+    -webkit-font-feature-settings: "kern" 1;
+    -moz-font-feature-settings   : "kern" 1;
+    -o-font-feature-settings     : "kern" 1;
+    font-feature-settings        : "kern" 1;
+    font-kerning                 : normal;
+    direction                    : $direction;
+}
+@include links($color-brand, darken($color-brand, 15%), 0, false);
+
+img {
+    display  : block;
+    max-width: 100%;
+}
+
+p {
+    line-height: $base-line-height + 0.5;
+}
+
+.container {
+    max-width   : 90%;
+    margin-left : auto;
+    margin-right: auto;
+    @include mq(tablet) {
+        max-width: 50em;
+    }
+}
+
+.post-content {
+    margin: 0 auto;
+}
+
+.posts {
+    padding: 2rem 0;
+
+    .pagination {
+        display        : flex;
+        justify-content: center;
+
+        .mdl-button {
+            margin: 0 1rem;
+        }
+
+        .mdl-button--colored {
+            background-color: #00BCD4;
+        }
+    }
+}
+// posts
+
+.post-list {
+    &.pad {
+        padding: 4rem 0;
+    }
+
+    &:last-of-type {
+        border: 0;
+    }
+
+    .post-header {
+        margin-bottom : 1rem;
+        display       : flex;
+        flex-direction: column;
+        align-items   : center;
+
+        .post-meta {
+            margin        : 0;
+            display       : flex;
+            flex-direction: column;
+            align-items   : center;
+            @include mq(tablet) {
+                flex-direction: row;
+            }
+
+            i {
+                vertical-align: middle;
+            }
+
+            span,
+            time {
+                margin: 0 0.8rem;
+            }
+
+            time {
+                white-space: nowrap;
+            }
+        }
+        //   post-meta
+        //
+        @include links($color-text, $color-brand , .3, true);
+    }
+    // post-header
+    .post-header--title {
+        font         : $base-font-size + 0.7 $base-font-family;
+        margin-bottom: 1rem !important;
+        a{
+           font-weight: 900;
+        }
+    }
+    //  post-header--title
+    .post-content {
+        font     : $base-font-size $base-font-family;
+        color    : lighten($color-text , 12%);
+        font-size: 2rem;
+
+        & > p:nth-child(1) > img {
+            width     : 100%;
+            text-align: center;
+            margin    : 2rem auto;
+        }
+
+        .more {
+            display        : flex;
+            justify-content: center;
+        }
+    }
+    // post-content
+}
+// post-list
+
+.post-content,
+.post-list_content {
+    & > h3 {
+        margin: 1.5rem 0 0.5rem;
+        font  : $base-font-size + 0.7 $base-font-family;
+    }
+}

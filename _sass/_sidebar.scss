@@ -1,0 +1,92 @@
+// .sidebar{
+//    position: fixed;
+//    height: 100%;
+//    top: 0;
+//    left: 0;
+//    margin: 0;
+//    background-color: darken($background-color, .9%);
+//    border-right: .3rem darken($background-color, 5%) solid ;
+//    padding: 2rem;
+//    @extend .center-block-vertical;
+//    @include justify-content(space-between);
+//
+//    .sidebar_header{
+//       .sidebar--rowlist{
+//          @extend .center-horizontal;
+//          @include align-items(center);
+//          li{
+//             a{
+//                padding: .5rem;
+//             }
+//          }
+//       }
+//       .mdl-menu{
+//          direction: $direction-opposite;
+//          .mdl-menu__item{
+//             text-align: right;
+//          }
+//       }
+//    }
+//    // sidebar_header
+//
+//    .sidebar_content{
+//       position: relative;
+//       width: 100%;
+//       @extend .center-block-vertical;
+//       @include justify-content(center);
+//
+//       .sidebar__avatar{
+//          width: 150px;
+//          height: 150px;
+//          border-radius: 50%;
+//          overflow: hidden;
+//          margin-bottom: 1rem;
+//          img{
+//             width: 100%;
+//             height: 100%;
+//          }
+//       }
+//
+//       .sidebar__head{
+//          margin: 1rem 0;
+//          h1{
+//             margin: 0;
+//             text-align: center;
+//             span{
+//                display: block;
+//                margin-bottom: 1rem;
+//                &.name{
+//                   font: $base-font-size + 1 $base-font-family-bold;
+//                }
+//                &.expertise{
+//                   font: $base-font-size + .8 $base-font-family;
+//                }
+//             }
+//
+//          }
+//       }
+//
+//    }
+//    //sidebar_content
+//
+//    .sidebar_footer{
+//       font-family: sans-serif;
+//       direction: $direction-opposite;
+//       text-align: center;
+//       & > .sidebar_footer__social-links{
+//          ul{
+//             @extend .center-horizontal;
+//             li{
+//                padding: .4rem;
+//                i{
+//                   font-size: $base-font-size + .9rem;
+//                }
+//             }
+//          }
+//       }
+//       & > .sidebar_footer__copyright{
+//          font-size: $base-font-size + .1;
+//       }
+//    }
+//    // sidebar_footer
+// }

@@ -1,0 +1,50 @@
+<header class="header">
+    <nav class="navigation">
+        <div class="container">
+
+            <div class="menu">
+                <button id="mdl-menu--bottom-right" class="mdl-button mdl-js-button mdl-button--icon">
+                    <i class="material-icons">more_vert</i>
+                </button>
+
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="mdl-menu--bottom-right">
+                    <li disabled class="mdl-menu__item">: موضوعات</li>
+                    {% assign sorted_cats = site.categories | sort %}
+                    {% for category in sorted_cats %}
+                        {% assign sorted_posts = category[1] | reversed %}
+                        {% for p in sorted_posts | first %}
+                            <li class="mdl-menu__item">
+                                <a href="{{site.baseurl}}/blog/category/{{p.category}}">{{p.category-fa}}</a>
+                            </li>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+            </div>
+            <a href="{{ site.baseurl }}/index.html">صفحه نخست</a>
+            <a href="{{ site.baseurl }}/blog">بلاگ</a>
+            <a href="{{ site.baseurl }}/about">درباره من</a>
+
+        </div>
+    </nav>
+
+    {% unless page.layout == 'post' %}
+        <section class="box-about">
+            <div class="container">
+                <div class="about--avatar">
+                    <img src="{{ site.authors.gravatar }}" alt="{{ site.title }}">
+                </div>
+                <div class="about--head">
+                    <h1>
+                        <span class="expertise">سلام، من
+                        </span>
+                        <span class="name">
+                            <a title="وبسایت شخصی علی حدادکار | Ali Haddadkar Personal Blog" href="{{ site.baseurl }}/index.html">{{ site.authors.name-fa }}</a>
+                        </span>
+                        <span class="expertise">هستم،یه توسعه دهنده رابط کاربری (Front-end)</span>
+                    </h1>
+                </div>
+            </div>
+
+        </section>
+    {% endunless %}
+</header>
